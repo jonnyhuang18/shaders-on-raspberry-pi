@@ -1,3 +1,5 @@
+Hello! this is my first commit
+
 Controlling RGB LED display with Raspberry Pi GPIO
 ==================================================
 
