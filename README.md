@@ -1,4 +1,5 @@
-Hello! this is my first commit
+— Add specific terminal commands that work for our rpi4, any modifications in code I made, and then examples of recycleReality shaders and logo running on 64x64 Matrix.
+— Once I get into process for LEDS (how it differs from the Matrix, same stuff as above), document it here (maybe underneath the section on Matrices).
 
 Controlling RGB LED display with Raspberry Pi GPIO
 ==================================================
