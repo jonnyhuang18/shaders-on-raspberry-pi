@@ -1,7 +1,31 @@
-— Add specific terminal commands that work for our rpi4, any modifications in code I made, and then examples of recycleReality shaders and logo running on 64x64 Matrix.
-— Once I get into process for LEDS (how it differs from the Matrix, same stuff as above), document it here (maybe underneath the section on Matrices).
+recycleReality Raspberry Pi
+==================================================
+The most applicable folder for our purposes is the utilities folder, which allows you to run all kinds of image formats plus animated gifs on the rpi4. I've already downloaded the required dependencies and libraries onto the rpi4, but this is a step by step on how to run the utils folder for other rpi models we may use. For more details, go over README.md in utils folder. Full manual is also included in this README.
 
-Controlling RGB LED display with Raspberry Pi GPIO
+### Setting up the pi ###
+
+The file led-image-viewer.cc contains the code that converts image files and gifs to single frames, prepares the file for pixel mapping, and then displays the animation on the Matrix.
+
+The `led-image-viewer` requires the GraphicsMagick dependency first, then
+it can be built with `make led-image-viewer`.
+
+```
+sudo apt-get update
+sudo apt-get install libgraphicsmagick++-dev libwebp-dev -y
+make led-image-viewer
+```
+
+### Commands for the RPI4 (On 64x64 RGB LED Matrix Display) ###
+
+These commands are specific to the RPI4 we are using right now, but I assume they can be used on any other pi version as well.
+—Specific commands
+—Examples of Mario and RRC logo.
+
+### LED STRIPS ###
+
+— Will get to soon.
+
+Controlling RGB LED display with Raspberry Pi GPIO (FULL MANUAL)
 ==================================================
 
 A library to control commonly available 64x64, 32x32 or 16x32 RGB LED panels
