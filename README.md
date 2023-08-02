@@ -2,7 +2,7 @@ recycleReality Raspberry Pi
 ==================================================
 The most applicable folder for our purposes is the utilities folder, which allows you to run all kinds of image formats plus animated gifs on the rpi4. I've already downloaded the required dependencies and libraries onto the rpi4, but this is a step by step on how to run the utils folder for other rpi models we may use. For more details, go over README.md in utils folder. Full manual is also included in this README.
 
-### Setting up the pi ###
+### Setting up the Raspberry Pi 4 Model B ###
 
 The file led-image-viewer.cc contains the code that converts image files and gifs to single frames, prepares the file for pixel mapping, and then displays the animation on the Matrix.
 
@@ -14,13 +14,6 @@ sudo apt-get update
 sudo apt-get install libgraphicsmagick++-dev libwebp-dev -y
 make led-image-viewer
 ```
-
-### Commands for the RPI4 (On 64x64 RGB LED Matrix Display) ###
-
-These commands are specific to the RPI4 we are using right now, but I assume they can be used on any other pi version as well.
-—Specific commands
-—Examples of Mario and RRC logo.
-
 
 LED STRIPS WITH RASPBERRY PI PICO WH 
 ---------------------------------------
