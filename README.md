@@ -22,10 +22,10 @@ These commands are specific to the RPI4 we are using right now, but I assume the
 —Examples of Mario and RRC logo.
 
 
-### LED STRIPS WITH RASPBERRY PI PICO WH ###
-
-Setting up a new Raspberry Pi Pico WH 
+LED STRIPS WITH RASPBERRY PI PICO WH 
 ---------------------------------------
+
+### Setting up a new Raspberry Pi Pico WH 
 
 ![Screen Shot 2023-08-02 at 12 23 13 PM](https://github.com/jonnyhuang18/shaders-on-raspberry-pi/assets/73203368/b9305521-f638-49de-bc9a-92744dc350bf)
 
@@ -45,7 +45,7 @@ The connection is very simple. The NeoPixel LED Strip is addressable, we only ne
 
 ### IMPORTANT: Always use an external power rather than the power pin of the microcontroller. This is because NeoPixels actually draw quite a lot of power and running too many of them could overload the Pico.
 
-### Moving rainbow gradient across LED strip
+### Moving a rainbow gradient across LED strip
 Here's an example program to run on the pico: 
 
 ```
