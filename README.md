@@ -49,6 +49,7 @@ The connection is very simple. The NeoPixel LED Strip is addressable, we only ne
 Here's an example program to run on the pico: 
  
 '''
+
 import time, board, neopixel, rainbowio
 num_leds = 16
 leds = neopixel.NeoPixel(board.D2, num_leds, brightness=0.4, auto_write=False )
@@ -61,6 +62,7 @@ while True:
   leds.show()  # only write to LEDs after updating them all
   i = (i+1) % 255
   time.sleep(0.05)
+  
 '''
 
 Controlling RGB LED display with Raspberry Pi GPIO (FULL MANUAL)
