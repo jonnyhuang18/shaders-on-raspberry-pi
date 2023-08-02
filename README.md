@@ -40,6 +40,8 @@ The connection is very simple. The NeoPixel LED Strip is addressable, we only ne
 
 ### Moving a rainbow gradient across LED strip
 Here's an example program to run on the pico: 
+—board.D2 explanation
+—num LEDs
 
 ```
 import time, board, neopixel, rainbowio
