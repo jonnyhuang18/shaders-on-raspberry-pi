@@ -22,12 +22,46 @@ These commands are specific to the RPI4 we are using right now, but I assume the
 —Examples of Mario and RRC logo.
 
 
-### LED STRIPS ###
+### LED STRIPS WITH RASPBERRY PI PICO WH ###
 
-— Will get to soon.
+Setting up a new Raspberry Pi Pico WH 
+---------------------------------------
+
 ![Screen Shot 2023-08-02 at 12 23 13 PM](https://github.com/jonnyhuang18/shaders-on-raspberry-pi/assets/73203368/b9305521-f638-49de-bc9a-92744dc350bf)
 
+For setting up a brand new Pico, download the latest version of Raspberry Pi Pico W firmware at [https://learn.adafruit.com/pico-w-wifi-with-circuitpython/installing-circuitpython]
 
+When you press and hold the BOOTSEL button and connect your Pico to your computer, it mounts as a mass storage volume. You can then just drag and drop the UF2 file onto the board.
+
+You'll then need to install the neopixel library onto the pico to run the LEDs. Follow this link to install neopixel [https://learn.adafruit.com/circuitpython-essentials/circuitpython-neopixel]. 
+
+Save the neopixel.mpy file to your device (for example, open it in Thonny and go file > save as and select MicroPython device. Give it the same name). Once it's there, you can import it into your code. 
+### IMPORTANT: Make sure to double check that the neopixel.mpy file is in the lib folder on the Pico! 
+
+### CIRCUIT AND HARDWARE SETUP
+
+The connection is very simple. The NeoPixel LED Strip is addressable, we only need one digital pin to control the entire chain of LEDs. Connect the 5V, GND, and Output pin of NeoPixel RGB LED Strip to VSYS, GND & GP0 Pin of Raspberry Pi Pico W respectively (diagram below). 
+![Screen Shot 2023-08-02 at 3 48 30 PM](https://github.com/jonnyhuang18/shaders-on-raspberry-pi/assets/73203368/be9f899f-a28d-49bc-b0f6-0a54fd89a962)
+
+### IMPORTANT: Always use an external power rather than the power pin of the microcontroller. This is because NeoPixels actually draw quite a lot of power and running too many of them could overload the Pico.
+
+### Moving rainbow gradient across LED strip
+Here's an example program to run on the pico: 
+ 
+'''
+import time, board, neopixel, rainbowio
+num_leds = 16
+leds = neopixel.NeoPixel(board.D2, num_leds, brightness=0.4, auto_write=False )
+delta_hue = 256//num_leds
+speed = 10  # higher numbers = faster rainbow spinning
+i=0
+while True:
+  for l in range(len(leds)):
+    leds[l] = rainbowio.colorwheel( int(i*speed + l * delta_hue) % 255  )
+  leds.show()  # only write to LEDs after updating them all
+  i = (i+1) % 255
+  time.sleep(0.05)
+'''
 
 Controlling RGB LED display with Raspberry Pi GPIO (FULL MANUAL)
 ==================================================
