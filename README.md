@@ -33,20 +33,18 @@ Save the neopixel.mpy file to your device (for example, open it in Thonny and go
 
 ### CIRCUIT AND HARDWARE SETUP
 
-The connection is very simple. The NeoPixel LED Strip is addressable, we only need one digital pin to control the entire chain of LEDs. Connect the 5V, GND, and Output pin of NeoPixel RGB LED Strip to VSYS, GND & GP0 Pin of Raspberry Pi Pico W respectively (diagram below). 
+The connection is very simple. The NeoPixel LED Strip is addressable, we only need one digital pin to control the entire chain of LEDs. Connect the 5V, GND, and Output pin of NeoPixel RGB LED Strip to VSYS, GND & GP15 Pin of Raspberry Pi Pico W respectively (diagram below). 
 ![Screen Shot 2023-08-02 at 3 48 30 PM](https://github.com/jonnyhuang18/shaders-on-raspberry-pi/assets/73203368/be9f899f-a28d-49bc-b0f6-0a54fd89a962)
 
 ### IMPORTANT: Always use an external power rather than the power pin of the microcontroller. This is because NeoPixels actually draw quite a lot of power and running too many of them could overload the Pico.
 
 ### Moving a rainbow gradient across LED strip
 Here's an example program to run on the pico: 
-—board.D2 explanation
-—num LEDs
 
 ```
 import time, board, neopixel, rainbowio
-num_leds = 16
-leds = neopixel.NeoPixel(board.D2, num_leds, brightness=0.4, auto_write=False )
+num_leds = 87
+leds = neopixel.NeoPixel(board.GP15, num_leds, brightness=0.4, auto_write=False )
 delta_hue = 256//num_leds
 speed = 10  # higher numbers = faster rainbow spinning
 i=0
@@ -57,6 +55,7 @@ while True:
   i = (i+1) % 255
   time.sleep(0.05)
 ```
+When creating the NeoPixel object, make sure the parameters are passed correctly. board.GP15 is the Pico pin number which will drive the NeoPixel data in from the LED output pin. The num_leds is the number of LEDs in the strip (At this moment we are using 87). 
 
 Controlling RGB LED display with Raspberry Pi GPIO (FULL MANUAL)
 ==================================================
