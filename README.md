@@ -44,7 +44,7 @@ Here's an example program to run on the pico:
 ```
 import time, board, neopixel, rainbowio
 num_leds = 87
-leds = neopixel.NeoPixel(board.GP15, num_leds, brightness=0.4, auto_write=False )
+leds = neopixel.NeoPixel(board.GP0, num_leds, brightness=0.4, auto_write=False )
 delta_hue = 256//num_leds
 speed = 10  # higher numbers = faster rainbow spinning
 i=0
@@ -55,7 +55,7 @@ while True:
   i = (i+1) % 255
   time.sleep(0.05)
 ```
-When creating the NeoPixel object, make sure the parameters are passed correctly. board.GP15 is the Pico pin number which will drive the NeoPixel data in from the LED output pin. The num_leds is the number of LEDs in the strip (At this moment we are using 87). 
+When creating the NeoPixel object, make sure the parameters are passed correctly. board.GP0 is the Pico pin number which will drive the NeoPixel data in from the LED output (any GP pin will work). The num_leds is the number of LEDs in the strip (At this moment we are using 87). 
 
 Controlling RGB LED display with Raspberry Pi GPIO (FULL MANUAL)
 ==================================================
