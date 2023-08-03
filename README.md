@@ -57,6 +57,9 @@ while True:
 ```
 When creating the NeoPixel object, make sure the parameters are passed correctly. board.GP0 is the Pico pin number which will drive the NeoPixel data in from the LED output (any GP pin will work). The num_leds is the number of LEDs in the strip (At this moment we are using 87). 
 
+Another cool repository to check out: [https://github.com/LedFx/LedFx]
+It allows you to stream audio reactive effects to a variety of networked LED strips!
+
 Controlling RGB LED display with Raspberry Pi GPIO (FULL MANUAL)
 ==================================================
 
