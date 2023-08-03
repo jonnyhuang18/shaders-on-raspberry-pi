@@ -22,11 +22,11 @@ LED STRIPS WITH RASPBERRY PI PICO WH
 
 ![Screen Shot 2023-08-02 at 12 23 13 PM](https://github.com/jonnyhuang18/shaders-on-raspberry-pi/assets/73203368/b9305521-f638-49de-bc9a-92744dc350bf)
 
-For setting up a brand new Pico, download the latest version of Raspberry Pi Pico W firmware at [https://learn.adafruit.com/pico-w-wifi-with-circuitpython/installing-circuitpython]
+For setting up a brand new Pico, download the latest version of Raspberry Pi Pico W firmware at https://learn.adafruit.com/pico-w-wifi-with-circuitpython/installing-circuitpython
 
 When you press and hold the BOOTSEL button and connect your Pico to your computer, it mounts as a mass storage volume. You can then just drag and drop the UF2 file onto the board.
 
-You'll then need to install the neopixel library onto the pico to run the LEDs. Follow this link to install neopixel [https://learn.adafruit.com/circuitpython-essentials/circuitpython-neopixel]. 
+You'll then need to install the neopixel library onto the pico to run the LEDs. Follow this link to install neopixel https://learn.adafruit.com/circuitpython-essentials/circuitpython-neopixel. 
 
 Save the neopixel.mpy file to your device (for example, open it in Thonny and go file > save as and select CircuitPython device. Give it the same name). Once it's there, you can import it into your code. 
 ### IMPORTANT: Make sure to double check that the neopixel.mpy file is in the lib folder on the Pico! 
@@ -58,6 +58,7 @@ while True:
 When creating the NeoPixel object, make sure the parameters are passed correctly. board.GP0 is the Pico pin number which will drive the NeoPixel data in from the LED output (any GP pin will work). The num_leds is the number of LEDs in the strip (At this moment we are using 87). 
 
 Another cool repository to check out: https://github.com/LedFx/LedFx
+
 It allows you to stream audio reactive effects to a variety of networked LED strips!
 
 Controlling RGB LED display with Raspberry Pi GPIO (FULL MANUAL)
