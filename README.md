@@ -28,12 +28,12 @@ When you press and hold the BOOTSEL button and connect your Pico to your compute
 
 You'll then need to install the neopixel library onto the pico to run the LEDs. Follow this link to install neopixel [https://learn.adafruit.com/circuitpython-essentials/circuitpython-neopixel]. 
 
-Save the neopixel.mpy file to your device (for example, open it in Thonny and go file > save as and select MicroPython device. Give it the same name). Once it's there, you can import it into your code. 
+Save the neopixel.mpy file to your device (for example, open it in Thonny and go file > save as and select CircuitPython device. Give it the same name). Once it's there, you can import it into your code. 
 ### IMPORTANT: Make sure to double check that the neopixel.mpy file is in the lib folder on the Pico! 
 
 ### CIRCUIT AND HARDWARE SETUP
 
-The connection is very simple. The NeoPixel LED Strip is addressable, we only need one digital pin to control the entire chain of LEDs. Connect the 5V, GND, and Output pin of NeoPixel RGB LED Strip to VSYS, GND & GP15 Pin of Raspberry Pi Pico W respectively (diagram below). 
+The connection is very simple. The NeoPixel LED Strip is addressable, we only need one digital pin to control the entire chain of LEDs. Connect the 5V, GND, and Output pin of NeoPixel RGB LED Strip to VSYS, GND & GP0 Pin of Raspberry Pi Pico W respectively (diagram below). 
 ![Screen Shot 2023-08-02 at 3 48 30 PM](https://github.com/jonnyhuang18/shaders-on-raspberry-pi/assets/73203368/be9f899f-a28d-49bc-b0f6-0a54fd89a962)
 
 ### IMPORTANT: Always use an external power rather than the power pin of the microcontroller. This is because NeoPixels actually draw quite a lot of power and running too many of them could overload the Pico.
